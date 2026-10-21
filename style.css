@@ -1,0 +1,215 @@
+/* SEPAN STYLE · ستایلا سەرەکی (پشتی ڤێ theme.css دهێتە بارکرن) */
+
+/* ================================================
+   1. ڕەنگ و گوهورووکێن سەرەکی (Variables)
+   ================================================ */
+:root{--bg:#0F0A0B;--ink:#FAF1EC;--mute:#B4A29E;--r1:#F9DFD3;--r2:#D9A08C;--r3:#B76E79;--g:linear-gradient(135deg,#F9DFD3,#D9A08C 50%,#B76E79);--glass:rgba(255,255,255,.05);--edge:rgba(255,255,255,.1)}
+
+/* ================================================
+   2. بنەرەت (Reset & Typography)
+   ================================================ */
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{color:var(--ink);font:15px/1.7 Vazirmatn,sans-serif;background:var(--bg);overflow-x:hidden}
+h1,h2,h3{font-family:'Noto Kufi Arabic',sans-serif;line-height:1.3}
+a{color:inherit;text-decoration:none}button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
+
+/* ================================================
+   3. ئۆربێن پاشخان (Background orbs)
+   ================================================ */
+.orb{position:fixed;border-radius:50%;filter:blur(90px);z-index:-1;pointer-events:none;animation:fl 14s ease-in-out infinite alternate}
+.o1{width:380px;height:380px;background:rgba(183,110,121,.35);top:-120px;inset-inline-end:-80px}
+.o2{width:320px;height:320px;background:rgba(217,160,140,.22);bottom:5%;inset-inline-start:-100px;animation-delay:-6s}
+@keyframes fl{to{transform:translate(40px,60px) scale(1.2)}}
+
+/* ================================================
+   4. شووشە (Glass)
+   ================================================ */
+.gl{background:var(--glass);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid var(--edge)}
+
+/* ================================================
+   5. هێدەر (Header)
+   ================================================ */
+header{position:sticky;top:calc(10px + env(safe-area-inset-top,0px));z-index:30;width:calc(100% - 20px);max-width:1060px;margin:10px auto 0;display:flex;justify-content:space-between;align-items:center;padding:6px 8px 6px 16px;border-radius:99px;background:rgba(15,10,11,.65);transition:box-shadow .3s,background .3s;animation:dn .8s both}
+header.sc2{box-shadow:0 14px 40px -14px #000;background:rgba(15,10,11,.88)}
+@keyframes dn{from{opacity:0;transform:translateY(-20px)}}
+.brand{display:flex;align-items:center;gap:10px;font:700 19px 'Cormorant Garamond',serif;letter-spacing:4px;direction:ltr}
+.brand img{width:40px;height:40px;border-radius:50%}
+
+/* ================================================
+   6. دوگمە (Buttons)
+   ================================================ */
+.btn{position:relative;overflow:hidden;display:inline-block;padding:13px 30px;border-radius:99px;background:var(--g);color:#24100f;font-weight:800;text-align:center;box-shadow:0 14px 30px -12px rgba(217,160,140,.85);transition:transform .25s,box-shadow .25s}
+.btn::after{content:"";position:absolute;top:0;bottom:0;width:60px;left:-100px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:sh 4s infinite}
+@keyframes sh{40%,100%{left:130%}}
+.btn:hover{transform:translateY(-3px)}.btn:active{transform:scale(.97)}.btn.sm{padding:9px 20px;font-size:13px}
+.btn.g{background:var(--glass);color:var(--ink);border:1px solid var(--edge);box-shadow:none}.btn.g::after{display:none}
+
+/* ================================================
+   7. هێرۆ و لۆگۆ (Hero)
+   ================================================ */
+.hero{text-align:center;padding:44px 20px 24px;max-width:640px;margin:0 auto}
+.hero>*{animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+.hero>:nth-child(2){animation-delay:.15s}.hero>:nth-child(3){animation-delay:.28s}.hero>:nth-child(4){animation-delay:.4s}.hero>:nth-child(5){animation-delay:.52s}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+.logo{position:relative;width:min(60vw,240px);margin:0 auto 28px;animation-name:up,bob;animation-duration:.9s,6s;animation-delay:0s,1s;animation-iteration-count:1,infinite;animation-timing-function:ease,ease-in-out;animation-direction:normal,alternate}
+@keyframes bob{to{transform:translateY(-10px)}}
+.logo::before{content:"";position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(#F9DFD3,#6b3a40,#D9A08C,#B76E79,#F9DFD3);animation:spin 8s linear infinite}
+.logo::after{content:"";position:absolute;inset:-36px;border-radius:50%;background:radial-gradient(circle,rgba(217,160,140,.5),transparent 65%);z-index:-1;animation:pulse 3.5s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{transform:scale(1.12);opacity:.7}}
+.logo img{position:relative;width:100%;border-radius:50%;display:block;border:5px solid var(--bg)}
+.sp{position:absolute;color:var(--r1);font-size:16px;animation:tw 2.8s ease-in-out infinite}
+.sp:nth-child(1){top:4%;inset-inline-start:-8%}.sp:nth-child(2){top:30%;inset-inline-end:-12%;animation-delay:.9s;font-size:12px}.sp:nth-child(3){bottom:6%;inset-inline-start:-4%;animation-delay:1.7s;font-size:13px}
+@keyframes tw{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1.2) rotate(90deg)}}
+.txt{background:linear-gradient(110deg,#F9DFD3 20%,#fff 40%,#D9A08C 60%,#B76E79 80%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ms 6s linear infinite}
+@keyframes ms{to{background-position:-250% 0}}
+.hero .en{font:700 clamp(42px,13vw,68px)/1 'Cormorant Garamond',serif;letter-spacing:12px;padding-inline-start:12px;direction:ltr}
+.hero h1{font-size:21px;font-weight:600;letter-spacing:1px;color:var(--mute);margin:10px 0 12px}
+.hero p{color:var(--mute);margin-bottom:26px}.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* ================================================
+   8. نووارا ڕۆیشتی (Marquee)
+   ================================================ */
+.mq{overflow:hidden;margin:22px 0;border-block:1px solid var(--edge);padding:11px 0;direction:ltr}
+.mq div{display:flex;gap:36px;width:max-content;animation:mq 26s linear infinite;font:700 14px 'Cormorant Garamond',serif;letter-spacing:5px;color:var(--r2)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ================================================
+   9. سەردێڕ و ئەنیمەیشنا دیارکرنێ (Sections & Reveal)
+   ================================================ */
+section{max-width:1060px;margin:0 auto;padding:34px 16px}
+.lbl{color:var(--r2);font-weight:700;font-size:12px;letter-spacing:4px;direction:ltr;text-align:start}
+h2{font-size:26px;margin-bottom:18px}
+h2::after{content:"";display:block;width:54px;height:3px;border-radius:9px;background:var(--g);margin-top:8px}
+.js .rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms)}.js .rv.in{opacity:1;transform:none}
+
+/* ================================================
+   10. فلتەر و بەرهەم (Filters & Product grid)
+   ================================================ */
+.filters{display:flex;gap:8px;overflow-x:auto;padding:2px 0 14px;scrollbar-width:none}
+.filters button{white-space:nowrap;padding:8px 22px;border-radius:99px;background:var(--glass);border:1px solid var(--edge);color:var(--mute);transition:.25s}
+.filters button.on{background:var(--g);color:#24100f;font-weight:800;border-color:transparent;box-shadow:0 10px 22px -10px var(--r2)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:760px){.grid{grid-template-columns:repeat(4,1fr);gap:20px}}
+.card{background:var(--glass);border:1px solid var(--edge);border-radius:24px;overflow:hidden;text-align:start;position:relative;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-8px);border-color:rgba(217,160,140,.55);box-shadow:0 30px 50px -26px rgba(183,110,121,.7)}
+.ph{aspect-ratio:3/4;background:linear-gradient(160deg,#2c1f20,#171011);display:grid;place-items:center;font-size:42px;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.card:hover .ph img{transform:scale(1.08)}
+.card .t{padding:12px 14px 16px}.card b{display:block;font-size:14px}.pr{color:var(--r1);font-weight:700;font-size:13.5px}
+.tag{position:absolute;top:10px;inset-inline-start:10px;background:var(--g);color:#24100f;font-size:11px;font-weight:800;padding:2px 12px;border-radius:99px;z-index:1}.tag.s{background:#fff;color:#111}
+.empty{text-align:center;color:var(--mute);padding:40px 0;grid-column:1/-1}
+
+/* ================================================
+   11. مۆدال و لاپەڕێ بەرهەمی (Modal & Sheet)
+   ================================================ */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);display:flex;align-items:flex-end;justify-content:center;z-index:60;animation:fi .3s}
+@keyframes fi{from{opacity:0}}.modal[hidden]{display:none}
+.sheet{background:#191112;border:1px solid var(--edge);width:100%;max-width:480px;max-height:92vh;overflow:auto;border-radius:30px 30px 0 0;position:relative;padding-bottom:calc(18px + env(safe-area-inset-bottom,0px));animation:sl .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes sl{from{transform:translateY(80px);opacity:0}}
+.sheet .ph{aspect-ratio:1/1.1;font-size:60px}.x{position:absolute;top:12px;inset-inline-end:12px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;z-index:2;border:1px solid var(--edge)}
+.th{display:flex;gap:8px;padding:10px 16px 0;overflow-x:auto}.th img{width:56px;height:56px;object-fit:cover;border-radius:12px;opacity:.5;border:2px solid transparent;transition:.2s}.th img.on{opacity:1;border-color:var(--r2)}
+.sb{padding:16px}.sb h3{font-size:21px}.sz{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 6px}
+.sz button{min-width:46px;padding:8px 14px;border-radius:14px;border:1.5px solid var(--edge);font-weight:700;transition:.2s}.sz button.on{background:var(--g);color:#24100f;border-color:transparent}
+
+/* ================================================
+   12. کارتێن سۆشیال - کەڤن، نەهاتینە بکارئینان (Old social cards)
+   ================================================ */
+.socs{display:grid;gap:14px}@media(min-width:760px){.socs{grid-template-columns:repeat(3,1fr)}}
+.sc{--x:50%;--y:50%;position:relative;display:flex;align-items:center;gap:16px;padding:22px 20px;border-radius:28px;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid var(--edge);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+.sc::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--x) var(--y),var(--c),transparent 70%);opacity:0;transition:opacity .3s;mix-blend-mode:soft-light}
+.sc::after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;inset-inline-end:-50px;top:-60px;background:var(--c);opacity:.2;filter:blur(44px);transition:opacity .3s}
+.sc:hover{transform:translateY(-6px);border-color:var(--c);box-shadow:0 26px 44px -24px var(--c)}.sc:hover::before{opacity:.7}.sc:hover::after{opacity:.45}
+.sc.ig{--c:#E1306C}.sc.tt{--c:#25F4EE}.sc.snap{--c:#FFFC00}
+.si{flex:none;width:62px;height:62px;border-radius:20px;display:grid;place-items:center;box-shadow:0 14px 26px -10px var(--c);position:relative;z-index:1;transition:transform .4s}
+.sc:hover .si{transform:rotate(-8deg) scale(1.1)}.si svg{width:30px;height:30px}
+.ig .si{background:linear-gradient(45deg,#F9CE34,#EE2A7B 55%,#6228D7)}.tt .si{background:#000;border:1px solid rgba(255,255,255,.2)}.tt .si svg{filter:drop-shadow(2px 2px 0 #FE2C55) drop-shadow(-2px -2px 0 #25F4EE)}.snap .si{background:#FFFC00}
+.st{flex:1;display:flex;flex-direction:column;position:relative;z-index:1;min-width:0}.st b{font-size:17px}.st small{color:var(--mute);font-size:12px}
+.st em{font-style:normal;color:var(--r1);font-weight:700;font-size:14px;margin-top:4px;direction:ltr;text-align:start;display:block}
+.ar{position:relative;z-index:1;flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--edge);transition:.3s}
+.ar svg{width:16px;height:16px}.sc:hover .ar{background:var(--c);color:#111;border-color:transparent;transform:rotate(-45deg)}
+
+/* ================================================
+   13. CTA - کەڤن، نەهاتیە بکارئینان
+   ================================================ */
+.cta{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:22px;border-radius:28px}
+.cta b{font-size:17px;display:block}.cta span{color:var(--mute);font-size:13px}
+.cta .ph2{font-weight:800;direction:ltr;color:var(--r1);margin-top:4px;display:block;font-size:16px}
+
+/* ================================================
+   14. واتسئاپ (WhatsApp button & FAB)
+   ================================================ */
+.wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 24px;border-radius:99px;font-weight:800;box-shadow:0 14px 28px -12px #25D366;transition:transform .25s}.wa:hover{transform:translateY(-3px)}
+.wa svg{width:22px;height:22px}
+.fab{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-start:16px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 28px -8px rgba(37,211,102,.6)}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:rp 2.2s infinite}
+@keyframes rp{to{transform:scale(1.7);opacity:0}}.fab svg{width:30px;height:30px}
+
+/* ================================================
+   15. بەشا خودان - کەڤن، نەهاتیە بکارئینان (.own)
+   ================================================ */
+.own{position:relative;text-align:center;padding:48px 16px;border-radius:32px;overflow:hidden}
+.own::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from 0deg,transparent,#D9A08C,transparent 40%,#B76E79,transparent 80%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 7s linear infinite}
+.own small{display:block;color:var(--r2);font-weight:700;letter-spacing:5px;font-size:11px;direction:ltr}
+.own .nm{font:400 clamp(58px,19vw,110px)/1.1 'Great Vibes',cursive;margin:10px 0 6px;filter:drop-shadow(0 8px 24px rgba(217,160,140,.35));direction:ltr;display:block}
+.own span.k{color:var(--mute);font-size:13px}
+.own .ln{width:80px;height:1px;margin:14px auto 0;background:var(--g)}
+
+/* ================================================
+   16. واژۆ (Footer)
+   ================================================ */
+footer{text-align:center;color:var(--mute);font-size:12px;padding:20px 16px calc(90px + env(safe-area-inset-bottom,0px))}
+
+
+/* ================================================
+   17. هێرۆ: دووماهیک ئینان (Hero tagline)
+   ================================================ */
+.hero .fl{display:block;margin:2px 0 12px;font:600 13px 'Cormorant Garamond',serif;letter-spacing:8px;color:var(--r2);direction:ltr}
+
+/* ================================================
+   18. سێ پێنگاڤ (How to order)
+   ================================================ */
+.steps{display:grid;gap:14px}@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.stp{position:relative;padding:28px 22px;border-radius:26px;overflow:hidden;transition:transform .35s,border-color .3s}
+.stp:hover{transform:translateY(-6px);border-color:rgba(217,160,140,.5)}
+.stp i{font:700 64px/1 'Cormorant Garamond',serif;font-style:normal;position:absolute;inset-inline-end:16px;top:6px;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.35}
+.stp h3{font-size:18px;margin-bottom:6px;position:relative}.stp p{color:var(--mute);font-size:13.5px;position:relative}
+
+/* ================================================
+   19. دەربارە (About)
+   ================================================ */
+.about{text-align:center;padding:44px 22px;border-radius:32px}
+.about h2::after{margin-inline:auto}.about>p{color:var(--mute);max-width:560px;margin:0 auto 24px}
+.fts{display:grid;gap:12px;text-align:start}@media(min-width:760px){.fts{grid-template-columns:repeat(3,1fr)}}
+.ft{padding:16px 18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid var(--edge);transition:.3s}.ft:hover{border-color:var(--r2);transform:translateY(-4px)}
+.ft b{display:block;color:var(--r1);font-size:15px}.ft span{color:var(--mute);font-size:12.5px}
+
+/* ================================================
+   20. پەیوەندی (Contact)
+   ================================================ */
+.ct{text-align:center;padding:48px 20px;border-radius:32px;position:relative;overflow:hidden}
+.ct::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(183,110,121,.3);filter:blur(80px);top:-140px;left:50%;transform:translateX(-50%);animation:pulse 5s infinite}
+.ct>*{position:relative}.ct h2::after{margin-inline:auto}.ct>p{color:var(--mute);margin-bottom:22px}
+
+/* ================================================
+   21. پیلێن سۆشیال - کەڤن (.pills)
+   ================================================ */
+.pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.pl{--c:#fff;display:inline-flex;align-items:center;gap:10px;padding:8px 20px 8px 8px;border-radius:99px;border:1px solid var(--edge);background:var(--glass);font-weight:700;font-size:14px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.pl .si{width:36px;height:36px;border-radius:50%;box-shadow:none}.pl .si svg{width:18px;height:18px}
+.pl:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 14px 28px -14px var(--c)}
+.pl.ig{--c:#E1306C}.pl.tt{--c:#25F4EE}.pl.snap{--c:#FFFC00}
+.ig .si{background:linear-gradient(45deg,#F9CE34,#EE2A7B 55%,#6228D7)}.tt .si{background:#000;border:1px solid rgba(255,255,255,.2)}.snap .si{background:#FFFC00}
+
+/* ================================================
+   22. ناڤێ گەشەپێدەر (Developer credit)
+   ================================================ */
+.dev{text-align:center;padding:30px 16px 10px}
+.dev small{display:block;color:var(--r2);letter-spacing:4px;font-size:10.5px;font-weight:700;direction:ltr}
+.dev .nm{font:400 clamp(34px,10vw,50px)/1.2 'Great Vibes',cursive;direction:ltr;display:block;margin:2px 0 10px}
+.dev .lt{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--r1);border-bottom:1px solid var(--r3);padding-bottom:2px;direction:ltr;transition:gap .3s}.dev .lt:hover{gap:14px}.dev .lt svg{width:14px;height:14px}
+.dev .tk{display:block;margin-top:10px;color:var(--mute);font-size:12px;direction:ltr}
+
+/* ================================================
+   23. کێمکرنا جوڵەیێ (Reduced motion)
+   ================================================ */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}

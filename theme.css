@@ -1,0 +1,66 @@
+/* SEPAN STYLE · تیمێ نوی: پاستێلی، شووشەیی (glass)، ڕووناک + تاری */
+:root{--bg:#FFF6F3;--ink:#3A2125;--mute:#8A6A70;--r1:#A8465A;--r2:#C0606F;--r3:#B76E79;--g:linear-gradient(135deg,#EE9FAE,#D77C8E 55%,#B76E79);--glass:rgba(255,255,255,.66);--edge:rgba(255,255,255,.9);--sh:0 20px 50px -22px rgba(150,70,90,.4);--a1:#FFD9DF;--a2:#F1DCF0;--a3:#FFE6D6;--sheet:#FFF9F6;--on:#fff}
+html.dark{--bg:#0F0A0B;--ink:#FAF1EC;--mute:#B4A29E;--r1:#F9DFD3;--r2:#D9A08C;--g:linear-gradient(135deg,#F9DFD3,#D9A08C 50%,#B76E79);--glass:rgba(60,34,40,.55);--edge:rgba(255,255,255,.12);--sh:0 20px 50px -20px rgba(0,0,0,.7);--a1:#4A1F2A;--a2:#2D2038;--a3:#3F2A2A;--sheet:#191112;--on:#24100f}
+body{background:radial-gradient(60% 38% at 8% 0,var(--a1),transparent 70%),radial-gradient(50% 36% at 100% 22%,var(--a2),transparent 70%),radial-gradient(60% 36% at 0 62%,var(--a3),transparent 70%),radial-gradient(50% 30% at 100% 100%,var(--a2),transparent 70%),var(--bg);background-attachment:fixed;transition:background .4s,color .3s}
+.orb{display:none}
+header,header.sc2{background:var(--glass);box-shadow:var(--sh)}
+.tbtn{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:16px;z-index:40;width:58px;height:58px;border-radius:50%;background:var(--glass);border:1px solid var(--edge);box-shadow:var(--sh);font-size:27px;line-height:1;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:transform .25s}.tbtn:active{transform:scale(.88) rotate(25deg)}
+.btn{color:var(--on);box-shadow:0 12px 28px -12px var(--r3)}.btn.g{color:var(--ink)}
+.filters button.on,.sz button.on,.tag{color:var(--on)}
+.hero{width:calc(100% - 20px);max-width:600px;margin:18px auto 0;padding:34px 20px 28px;border-radius:40px;background:var(--glass);border:1px solid var(--edge);box-shadow:var(--sh)}
+.txt{background-image:linear-gradient(110deg,var(--ink) 20%,var(--r3) 50%,var(--r1) 80%)}
+.mq{width:calc(100% - 20px);max-width:1060px;margin:18px auto;border:1px solid var(--edge);border-radius:99px;background:var(--glass);box-shadow:var(--sh)}
+.card{border-radius:32px;background:var(--glass);box-shadow:var(--sh)}
+.card:nth-child(even){margin-top:26px;margin-bottom:-26px}.grid{padding-bottom:30px}
+.ph{background:linear-gradient(135deg,var(--a1),var(--a2))}
+.sheet{background:var(--sheet)}.modal{background:rgba(58,33,37,.55)}
+.sc{background:var(--glass)}.ft{background:var(--glass)}
+.sc,.stp,.about,.ct,.ft,.pl{box-shadow:var(--sh)}
+
+/* ===== سۆشیال میدیا: لوکس ===== */
+.fol{display:flex;align-items:center;justify-content:center;gap:14px;margin:34px 0 24px;color:var(--r2);font:700 11px 'Cormorant Garamond',serif;letter-spacing:6px;direction:ltr}
+.fol::before,.fol::after{content:"";flex:1;max-width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--r2))}.fol::after{transform:scaleX(-1)}
+.lux{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:460px;margin:0 auto}
+.lx{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 2px;direction:ltr}
+.lx .rg{position:relative;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:var(--r1);background:var(--glass);border:1px solid var(--edge);box-shadow:var(--sh);transition:transform .35s,background .35s,color .35s}
+.lx .rg::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--r2);opacity:.5;transition:inset .35s,opacity .35s}
+.lx svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.lx svg.f{fill:currentColor;stroke:none}
+.lx b{font:700 11px 'Cormorant Garamond',serif;letter-spacing:3px;margin-top:4px}
+.lx small{font-size:11.5px;color:var(--mute);margin-top:-8px}
+.lx:hover .rg{background:var(--g);color:var(--on);transform:translateY(-4px)}.lx:hover .rg::before{inset:-10px;opacity:1}
+.ct .ph2{font:700 21px 'Cormorant Garamond',serif!important;letter-spacing:4px;margin-top:26px!important}
+/* ===== واژۆ: ناڤێ گەشەپێدەر ===== */
+.dev{padding:50px 16px 8px}
+.orn{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px;color:var(--r2)}
+.orn i{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--r2))}.orn i:last-child{transform:scaleX(-1)}
+.dev small{letter-spacing:6px;font-size:10px;color:var(--mute)}
+.dev .nm.sig{font:italic 600 clamp(36px,11vw,50px)/1.25 'Cormorant Garamond',serif;letter-spacing:2px;margin:8px 0 18px;background:linear-gradient(120deg,var(--r1),var(--r3) 45%,var(--r2) 75%,var(--r1));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 16px rgba(183,110,121,.28))}
+.dev .lt{border:1px solid var(--r2);border-radius:99px;padding:8px 20px;font-size:12.5px;background:var(--glass)}
+.dev .tk{margin-top:16px;letter-spacing:2px;font-size:11px}
+
+/* ===== سەبەت + گەهاندن ===== */
+[hidden]{display:none!important}
+.ha{display:flex;align-items:center;gap:8px}
+.cb{position:relative;width:40px;height:40px;border-radius:50%;background:var(--glass);border:1px solid var(--edge);display:grid;place-items:center;color:var(--r1)}
+.i2{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bd{position:absolute;top:-5px;inset-inline-end:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:99px;background:var(--g);color:var(--on);font:800 11px/19px Vazirmatn,sans-serif;text-align:center}
+.bd.bump{animation:bump .45s}@keyframes bump{50%{transform:scale(1.55)}}
+@media(max-width:440px){.ha .btn.sm{display:none}}
+.zb{display:flex;flex-direction:column;gap:6px;margin-top:16px}.zb>span{font-weight:700;font-size:14px}
+.zs{width:100%;appearance:none;-webkit-appearance:none;font:inherit;font-weight:700;color:var(--ink);background-color:var(--glass);border:1.5px solid var(--r3);border-radius:99px;padding:12px 18px;padding-inline-end:46px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B76E79' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:18px;background-position:left 16px center}
+.zs option{color:#3A2125;background:#fff}
+.zs.shake{animation:shake .45s}@keyframes shake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+.dv{margin-top:12px;padding:8px 16px;border-radius:99px;background:var(--glass);border:1px solid var(--edge);font-size:13px;font-weight:700;text-align:center}.dv::before{content:"🚚 "}
+.acts{display:flex;flex-direction:column;gap:8px;margin-top:14px}.acts .btn{display:block;width:100%;border:0;font:inherit;font-weight:800}.acts .btn.g{border:1px solid var(--edge)}
+.cs .sb{padding-top:62px;min-height:260px}
+.cl{display:flex;flex-direction:column;gap:10px;margin-top:10px}.none{text-align:center;color:var(--mute);padding:26px 0}
+.ct1{display:flex;align-items:center;gap:12px;padding:8px;border-radius:24px;background:var(--glass);border:1px solid var(--edge)}
+.cth{flex:none;width:62px;height:72px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,var(--a1),var(--a2));display:grid;place-items:center}.cth img{width:100%;height:100%;object-fit:cover}
+.cin{flex:1;min-width:0}.cin b{display:block;font-size:14px}.cin span{font:700 15px 'Cormorant Garamond',serif;color:var(--r1)}
+.qt{display:flex;align-items:center;gap:8px;padding-inline-end:6px}.qt button{width:30px;height:30px;border-radius:50%;background:var(--glass);border:1px solid var(--edge);font-weight:800;font-size:16px;line-height:1}.qt span{min-width:18px;text-align:center;font-weight:700}
+.cf{display:flex;flex-direction:column;margin-top:8px}
+.sum{display:flex;flex-direction:column;gap:4px;margin-top:14px}.sum div{display:flex;justify-content:space-between;color:var(--mute)}
+.sum .tot{color:var(--ink);font-weight:800;font-size:17px;border-top:1px dashed var(--mute);padding-top:8px;margin-top:4px}
+
+.zx{width:100%;margin-top:8px;padding:12px 18px;border-radius:99px;border:1.5px solid var(--r3);background:var(--glass);color:var(--ink);font:inherit;font-weight:600}
+.zx:focus{outline:0;box-shadow:0 0 0 4px rgba(183,110,121,.18)}.zx.shake{animation:shake .45s}
