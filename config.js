@@ -2,8 +2,8 @@
 // ⚠️ توکنێ GitHubێ هەرگیز ل ڤێرە نەنڤیسە!
 const CFG = {
   WHATSAPP: "9647502326795",
-  GH_OWNER: "Mhamadd11227h",   // ناڤێ هەژمارا GitHub
-  GH_REPO: "sepan-",    // ناڤێ repository
+  GH_OWNER: "sep4n",   // ناڤێ هەژمارا GitHub
+  GH_REPO: "sepan-style",    // ناڤێ repository
   GH_BRANCH: ""   // ڤالا بهێلە = branchا سەرەکی (main یان master)
 };
 
